@@ -54,7 +54,9 @@ function getzipstr(zip, file/*:string*/, safe/*:?boolean*/)/*:?string*/ {
 var _fs, jszip;
 /*:: declare var JSZip:any; */
 /*global JSZip:true */
-if(typeof JSZip !== 'undefined') jszip = JSZip;
+// comment out usage of global JSZip
+// when JSZip version > 2.0 => export is not working
+// if(typeof JSZip !== 'undefined') jszip = JSZip;
 if (typeof exports !== 'undefined') {
 	if (typeof module !== 'undefined' && module.exports) {
 		if(typeof jszip === 'undefined') jszip = require('./jszip.js');
